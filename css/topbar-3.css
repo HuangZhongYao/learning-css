@@ -124,6 +124,53 @@
   background-color: #DD302D;
 }
 
-.slide-nva-list li:hover a{
+.slide-nva-list li:hover>a{
   color: white;
+}
+
+.slide-nva-list{
+  position: relative;
+}
+
+.sub-menu{
+  background-color: white;
+  height: 458px;
+  width: 700px;
+  position: absolute;
+  left: 190px;
+  top: 0;
+  display: none;
+
+}
+
+.slide-nva-list li:hover .sub-menu{
+  display: block;
+}
+.sub-menu dl:first-child{
+  margin-top: 10px;
+}
+
+.sub-menu dl{
+  padding-left: 20px;
+  font-size: 14px;
+  line-height: 36px;
+  height: 36px;
+}
+.sub-menu dt{
+  float: left;
+  width: 70px;
+  margin-right: 10px;
+
+}
+.sub-menu dd{
+  float: left;
+
+}
+.sub-menu dl>dt>a{
+  font-weight: bold ;
+}
+
+.sub-menu dd>a {
+  border-left: 1px solid #666;
+  padding: 0 10px;
 }
