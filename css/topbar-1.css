@@ -1,0 +1,91 @@
+.topbar{
+  height: 30px;
+  background-color: #CECECE;
+}
+
+.container{
+  width: 1190px;
+  margin: 0 auto;
+}
+
+.topbar .container .welcome{
+  /*行内元素可以像处理文本一样处理*/
+  line-height: 30px;
+  height: 30px;
+}
+
+.welcome{
+  font-size: 0;
+  color: #666;
+}
+
+.welcome span,.welcome a{
+  /*消除元素之间间隙*/
+  font-size: 12px;
+}
+
+.hello{
+  margin-right: 28px;
+}
+
+.welcome .login{
+  padding-right: 10px;
+  border-right: 1px solid #666;
+}
+
+.welcome .register{
+  margin-left: 10px;
+}
+
+
+.top-nav{
+  color: #666;
+  height: 30px;
+  line-height: 30px;
+  font-size: 12px;
+}
+.top-nav .list li{
+  float: left;
+}
+
+
+.top-nav .list li a{
+  padding: 0 15px;
+  border-right: 1px solid #666;
+}
+
+.top-nav .list li:first-child a{
+  padding-left: 0;
+
+}
+
+.top-nav .list li:last-child a{
+  border-right: none;
+  padding-right: 0;
+}
+
+
+.main-nav{
+  border-bottom: 1px solid #DD302D;
+}
+
+.main-nav .all-type{
+  line-height: 48px;
+  text-align: center;
+  height: 48px;
+  width: 190px;
+  background-color: #DD302D;
+  color: white;
+  font-size: 16px;
+}
+
+.main-nav .list li{
+  float: left;
+  margin: 0 10px;
+  height: 48px;
+  line-height: 48px;
+}
+
+.main-nav .list li a{
+  font-size: 16px;
+}

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>浮动后的影响解决</title>
+
+  <style>
+
+    .outer{
+      border: 1px solid black;
+      background-color: gray;
+      width: 500px;
+
+      /*解决父亲高度塌陷 一 */
+      /*height: 120px;*/
+
+      /*解决父亲高度塌陷 二 */
+      /*float: left;*/
+
+      /*解决父亲高度塌陷 三 */
+      /*overflow: scroll;*/
+
+
+    }
+
+    /*解决父亲高度塌陷 四
+    不能是浮动的也不能是行内元素
+    */
+    /*.box4{*/
+    /*  clear: both;*/
+
+    /*浮动影响 五*/
+    .outer::after{
+      content: '';
+      display: block;
+      clear: both;
+    }
+    /*}*/
+
+    .box{
+      margin: 10px;
+      background-color: skyblue;
+      border: 1px solid black;
+      height: 100px;
+      width: 100px;
+
+    }
+
+    .box0,.box1,.box2,.box3{
+      float: left;
+    }
+  </style>
+</head>
+<body>
+<div class="outer">
+  <div class="box box0">0</div>
+  <div class="box box1">1</div>
+  <div class="box box2">2</div>
+  <div class="box box3">3</div>
+<!--  <div class="box box4">4</div>-->
+</div>
+
+<div style="background-color: orange">
+  文档中心
+  TiDB
+  社区
+  联系我们
+  ​
+  搜索文档
+
+  文档中心
+  关于 TiDB
+  快速上手
+  应用开发
+  部署标准集群
+  软硬件环境需求
+  环境与系统配置检查
+  规划集群拓扑
+  安装与启动
+  使用 TiUP 部署
+  在 Kubernetes 上部署
+  验证集群状态
+  测试集群性能
+  数据迁移
+  数据集成
+  运维操作
+  监控与告警
+  故障诊断
+  性能调优
+  教程
+  TiDB 工具
+  参考指南
+  常见问题解答 (FAQ)
+  版本发布历史
+  术语表
+  使用 TiUP 部署 TiDB 集群
+  TiUP 是 TiDB 4.0 版本引入的集群运维工具，TiUP cluster 是 TiUP 提供的使用 Golang 编写的集群管理组件，通过 TiUP cluster 组件就可以进行日常的运维工作，包括部署、启动、关闭、销毁、弹性扩缩容、升级 TiDB 集群，以及管理 TiDB 集群参数。
+
+  目前 TiUP 可以支持部署 TiDB、TiFlash、TiDB Binlog、TiCDC 以及监控系统。本文将介绍不同集群拓扑的具体部署步骤。
+
+  第 1 步：软硬件环境需求及前置检查
+  软硬件环境需求
+
+  环境与系统配置检查
+
+  第 2 步：在中控机上部署 TiUP 组件
+  在中控机上部署 TiUP 组件有两种方式：在线部署和离线部署。
+
+  在线部署
+
+</div>
+</body>
+</html>

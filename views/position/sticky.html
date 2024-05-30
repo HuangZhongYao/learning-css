@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>粘性定位</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+    .page-head {
+      background-color: orange;
+      text-align: center;
+      height: 50px;
+      width: 100%;
+      line-height: 50px;
+    }
+
+    .first{
+      width: 100%;
+      background-color: skyblue;
+      position: sticky;
+      top: 0;
+
+
+    }
+
+    .item{
+      width: 100%;
+      background-color: gray;
+    }
+
+    body{
+      height: 2000px;
+    }
+    .content{
+    height: 250px;
+    overflow: scroll;
+    }
+
+
+  </style>
+</head>
+<body>
+<div class="page-head">
+  页头
+</div>
+
+<div class="content">
+
+  <div>
+    <h2 class="first">A</h2>
+    <h2 class="item">A1</h2>
+    <h2 class="item">A2</h2>
+    <h2 class="item">A3</h2>
+    <h2 class="item">A4</h2>
+    <h2 class="item">A5</h2>
+    <h2 class="item">A6</h2>
+    <h2 class="item">A7</h2>
+  </div>
+
+  <div>
+    <h2 class="first">B</h2>
+    <h2 class="item">B1</h2>
+    <h2 class="item">B2</h2>
+    <h2 class="item">B3</h2>
+    <h2 class="item">B4</h2>
+    <h2 class="item">B5</h2>
+    <h2 class="item">B6</h2>
+    <h2 class="item">B7</h2>
+  </div>
+
+  <div>
+    <h2 class="first">C</h2>
+    <h2 class="item">C1</h2>
+    <h2 class="item">C2</h2>
+    <h2 class="item">C3</h2>
+    <h2 class="item">C4</h2>
+    <h2 class="item">C5</h2>
+    <h2 class="item">C6</h2>
+    <h2 class="item">C7</h2>
+  </div>
+
+</div>
+
+</body>
+</html>

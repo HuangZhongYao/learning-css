@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>定位特殊应用</title>
+</head>
+
+<style>
+.outer{
+  background-color: orange;
+  padding: 10px;
+  position: relative;
+}
+
+.inner{
+  background-color: #7bff53;
+  position: absolute;
+
+  /*占满父元素 */
+  /*越过 padding*/
+  top: 0;
+  left:0 ;
+  right: 0;
+  bottom: 0;
+}
+
+
+</style>
+<body>
+
+<div class="outer">
+  <div class="inner">
+inner
+  </div>
+</div>
+</body>
+</html>
