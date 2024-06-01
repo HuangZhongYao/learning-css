@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>多列布局</title>
+</head>
+<style>
+  .outer{
+    column-count: 4;
+    /*设置列之间间距*/
+    column-gap: 30px;
+    /*设置边框大小、样式、颜色*/
+    column-rule: 1px dotted red;
+  }
+  .many-img{
+    column-count: 5;
+  }
+  .outer img,.many-img img{
+    /*多列布局设置图片宽度百分百自动适配列的宽度*/
+    width: 100%;
+  }
+
+  /*设置鼠标悬停图片时样式， 实现呼吸效果*/
+  .many-img img:hover{
+
+    /*添加阴影*/
+    box-shadow: 0 0 20px black;
+    /*添加缩放*/
+    transform: scale(1.03);
+  }
+  .outer h1,.many-img h1{
+    /*设置跨列*/
+    column-span: all;
+  }
+  #di{
+    /*设置跨列*/
+    column-span: all;
+  }
+
+</style>
+<body>
+<div class="outer">
+  <h1>
+    flex布局（详解）
+  </h1>
+  <p style="color: red">ps: 专门用来做文字分列功能，新闻报纸效果</p>
+  <p >
+  CSDN首页
+  博客
+  下载
+  学习
+  社区
+  知道
+  GitCode
+  InsCode
+  会议
+  css
+  搜索
+</p>
+  <p>
+  会员中心
+  消息
+  历史
+  创作中心
+  发布
+  flex布局（详解）
+
+  fish_zhangyu
+
+  已于 2024-04-26 15:24:19 修改
+
+  阅读量1.7w
+  收藏 30
+
+  点赞数 10
+  文章标签： css
+  版权
+
+  GitCode 开源社区
+  文章已被社区收录
+  加入社区
+  一、什么是flex布局
+  Flex是Flexible Box的缩写，意为”弹性布局”，用来为盒状模型提供最大的灵活性。
+
+  任何一个容器都可以指定为Flex布局
+
+  .box{
+
+  dispaly: flex;
+
+  }
+
+  行内元素也可以使用flex布局
+
+  .box{
+
+  display: inline-flex;
+
+  }
+
+  Webkit内核的浏览器，需要加上-webkit前缀。
+
+  .box{
+
+  display: -webkit-flex; /* Safari */
+
+  display: flex;
+
+  }
+  </p>
+  <p>
+  二、基本概念
+  采用Flex布局的元素，称为Flex容器（flex container），简称”容器”。它的所有子元素自动成为容器成员，称为Flex项目（flex item），简称”项目”。
+    <img src="../img/t01a8245891acdb3913.jpg" alt="">
+
+
+
+  容器默认存在两根轴：水平的主轴（main axis）和垂直的交叉轴（cross axis）。主轴的开始位置（与边框的交叉点）叫做main start，结束位置叫做main end；交叉轴的开始位置叫做cross start，结束位置叫做cross end。
+
+  项目默认沿主轴排列。单个项目占据的主轴空间叫做main size，占据的交叉轴空间叫做cross size。
+
+  三、容器的属性
+  容器的6个属性
+
+  flex-direction
+  flex-wrap
+  flex-flow
+  justify-content
+  align-items
+  align-content
+  1、flex- direction属性
+  flex- direction属性决定主轴的方向（即项目的排列方向）
+
+  .box{
+
+  display: flex;
+
+  flex-direction: row | row-reverse | column | column-reverse;
+
+  }
+
+  flex-direction属性有4个值
+
+  row（默认值）：主轴为水平方向，起点在左端（项目从左往右排列）。
+  row-reverse：主轴为水平方向，起点在右端（项目从右往左排列）。
+  column：主轴为垂直方向，起点在上沿（项目从上往下排列）。
+  column-reverse：主轴为垂直方向，起点在下沿（项目从下往上排列）。
+
+
+  2、flex-wrap属性
+  默认情况下，项目都排在一条线（又称”轴线”）上。flex-wrap属性定义，如果一条轴线排不下，如何换行。
+
+  .box{
+
+  display: flex;
+
+  flex-wrap: nowrap | wrap | wrap-reverse;
+
+  }
+
+  flex-wrap属性有3个值
+
+  nowrap（默认）：不换行（列）。
+  wrap：主轴为横向时：从上到下换行。主轴为纵向时：从左到右换列。
+  wrap-reverse：主轴为横向时：从下到上换行。主轴为纵向时：从右到左换列。
+
+
+  3、flex-flow
+
+  flex-flow属性是flex-direction属性和flex-wrap属性的简写形式，默认值为row nowrap。
+
+  .box{
+
+  flex-flow: <flex-direction> <flex-wrap>;
+
+  }
+
+  4、justify-content
+  justify-content属性定义了项目在主轴上的对齐方式。
+
+  .box {
+
+  display: flex;
+
+  justify-content: flex-start | flex-end | center | space-between | space-around;
+
+  }
+  </p>
+  <p>
+  justify-content属性有五个值
+
+  flex-start（默认）：与主轴的起点对齐。
+  flex-end：与主轴的终点对齐
+  center：与主轴的中点对齐。
+  space-between：两端对齐主轴的起点与终点，项目之间的间隔都相等。
+  space-around：每个项目两侧的间隔相等。所以，项目之间的间隔比项目与边框的间隔大一倍
+  5、align-items属性
+  align-items属性定义项目在交叉轴上如何对齐。纵向交叉轴始终自上而下，横向交叉轴始终自左而右。
+
+  .box {
+
+  display: flex;
+
+  align-items: flex-start | flex-end | center | baseline | stretch;
+
+  }
+
+  align-items属性有5个值
+
+  flex-start：交叉轴的起点对齐。
+  flex-end：交叉轴的终点对齐。
+  center：交叉轴的中点对齐。
+  baseline: 项目的第一行文字的基线对齐。
+  stretch（默认值）：如果项目未设置高度或设为auto，项目将占满整个容器的高度。
+
+
+  6、align-content属性
+  align-content属性定义了多根轴线的对齐方式。如果项目只有一根轴线，该属性不起作用
+
+  .box {
+
+  display: flex;
+
+  align-content: flex-start | flex-end | center | space-between | space-around | stretch;
+
+  }
+
+  align-content属性有6个值
+
+  flex-start：与交叉轴的起点对齐。
+  flex-end：与交叉轴的终点对齐。
+  center：与交叉轴的中点对齐。
+  space-between：与交叉轴两端对齐，轴线之间的间隔平均分布。
+  space-around：每根轴线两侧的间隔都相等。所以，轴线之间的间隔比轴线与边框的间隔大一倍。
+  stretch（默认值）：主轴线占满整个交叉轴。
+  四、项目的属性
+  设置在项目上的6个属性。
+
+  order
+  flex-grow
+  flex-shrink
+  flex-basis
+  flex
+  align-self
+  1、order属性
+  order属性定义项目的排列顺序。数值越小，排列越靠前，默认为0。
+
+  .item {
+
+  order: <integer>;
+
+    }
+
+
+  </p>
+  <p id="di">
+    2、flex-grow属性
+    flex-grow属性定义项目的放大比例，默认为0，即如果存在剩余空间，也不放大。
+
+    .item {
+
+    flex-grow: <number>; /* default 0 */
+
+      }
+
+
+
+
+
+      剩余空间分4份 黄色占3份，紫色1份
+
+      3、flex-shrink属性
+      flex-shrink属性定义了项目的缩小比例，默认为1，即如果空间不足，该项目将缩小。负值对该属性无效。如果flex-shrink值为0，表示该项目不收缩。
+
+      .item {
+
+      flex-shrink: <number>; /* default 1 */
+
+        }
+
+        4、flex-basis属性
+        flex-basis属性定义了在分配多余空间之前，项目占据的主轴空间（main size）。浏览器根据这个属性，计算主轴是否有多余空间。它的默认值为auto，即项目的本来大小。
+
+        .item {
+        flex-basis: <length> | auto; /* default auto */
+
+          }
+
+          当设置了flex-basis的值并且flex-shrink: 0； width的设置就不起作用了
+
+          5、flex属性
+          flex属性是flex-grow,flex-shrink和flex-basis的简写，默认值为 0 1 auto后两个属性可选
+
+          .item {
+
+          flex: none | [ <'flex-grow'> <'flex-shrink'>? || <'flex-basis'> ]
+
+          }
+
+          该属性有两个快捷值： auto( 1 1 auto)和none( 0 0 auto)
+
+          6、align-self属性
+          align-self属性允许单个项目有与其他项目不一样的对齐方式。可覆盖align-items属性，默认值为auto，表示继承父元素的align-items属性，如果没有父元素，则等于strech
+
+          .item {
+
+          align-self: auto | flex-start | flex-end | center | baseline | stretch;
+
+          }
+
+          align-self属性有6个值，除了auto，其他都与align-items属性完全一致。
+
+
+          fish_zhangyu
+          关注
+
+          10
+
+
+          30
+
+          1
+
+          Flex弹性布局详解
+          09-29
+          形象生动讲解CSS布局，Flex弹性布局生动形象的理解，更好的理解弹性布局
+          微信小程序 Flex布局详解
+          09-01
+          主要介绍了微信小程序 Flex布局详解的相关资料,需要的朋友可以参考下
+          1 条评论
+          努力学习_提高自己
+          热评
+          flex-wrap属性那里，值为wrap-reverse时，从下到上换行，图片应该是4和5在123的上面吧表情包
+          写评论
+          Flex布局
+          6-1
+          content 主轴 justify-content align-content 侧轴多行对齐 flex布局~弹性盒子换行 特性: 给父亲添加了display: flex;所有的子盒子(弹性盒子)都会在一行显示,不会自动换行。需要添加flex-wrap: wrap;属性换行 总结: 在flex布局中,标签不再分类。 简单说就是没有块级元素,行内元素和行内块元素之分 任何一个元素...
+          前端知识——css 之 flex 布局_css flex
+          5-30
+          一、认识 flex 布局 1. flex 布局的重要概念 二、flex 相关属性 1. flex container 中的属性 1.1 flex-direction:item 的排布方向 1.2 flex-wrap:排布是否换行 1.3 flex-flow:属性的合并写法 1.4 justify-content:item 的水平对齐方式 1.5 align-item:item 的垂直对齐方式 ...
+          Flex布局 （上万字）超详细讲解 这篇就够了
+          最新发布
+          程序员碎像的博客
+          1万+
+          Flex布局，全称为“Flexible Box Layout”，意为“弹性盒布局”。它是一种现代的CSS布局模式，旨在提供一种更有效的方式来布局、对齐和分配容器中项目之间的空间，即使它们的大小未知或动态变化。灵活性：Flex布局允许项目在容器中灵活地扩展和收缩，以填充可用空间或调整大小以适应内容。对齐方式：Flex布局提供了各种对齐选项，可以轻松地实现水平和垂直对齐。方向控制：可以方便地改变主轴的方向，使项目在水平或垂直方向上排列。空间分配。
+          CSS常用布局二（flex布局）
+          BreenCL的博客
+          2941
+          flex布局 前言：flex是flexible box的缩写，译为“弹性布局”，用来为盒模型提供最大的灵活性，任何一个容器都可以指定为flex布局，只需要设置“display:flex"即可；行内元素可以通过设置”display:inline-flex“实现；需要注意的是，如果设置了flex布局，则子元素的float、clear和vertical-align属性将失效； 1.基本概念 使用了flex布局的元素，称为flex容器（flex container），简称为”容器“。它所有的子元素自动生成容器成员，
+          一篇文章就懂的flex布局
+          6-1
+          首先我们需要指定一个容器来实现flex布局,设置flex布局后的容器的内部元素(子元素)均可以使用flex来进行布局。 <!DOCTYPEhtml> .container{ display: flex; } .item{ height:50px; width:100px; } 1 2
+          详解CSS中的flex布局
+          01-19
+          flex布局又称为弹性布局，任何一个容器都可以指定为flex布局 声明弹性盒子的几种方式 就像前面说的，所有容器都可以指定为flex布局 .box{    display:flex;} 行内元素也可以使用： display:inline-flex; 改变弹性元素的方向 弹性盒子默认是从左到右的方向，此时的轴是水平方向的， flex-direction 默认属性为 row .box{    display:flex;}   可以通过修改 flex-direction 属性来改变排列方向，也就是把轴变为垂直方向 .box{    display:flex;    flex-deri
+          flex布局-CSDN
+          CSDN-QD-smile
+          185
+            Flex是Flexible Box的缩写，意为”弹性布局”，用来为盒状模型提供最大的灵活性。   任何一个容器都可以指定为Flex布局，设置方法为： .box{ display: flex; } 行内元素也可以使用Flex布局。 .box{ display: inline-flex; } Webkit内核的浏览器，必须加上-webkit前缀。 .box{ display: ...
+          flex布局篇
+          逆风飞舞2016的博客
+          1797
+          flex布局
+          flex布局
+          shirukai
+          273
+          flex /*flex*/ .fl{ display: flex; } .in-fl{ display: inline-flex; } /*flex-direction row（默认值）：主轴为水平方向，起点在左端。 row-reverse：主轴为水平方向，起点在右端。 column...
+          Flex布局
+          Jack的博客
+          135
+          改变轴方向后，轴名依然不变，对齐属性依然根据轴名选择（主轴变换方向后，垂直居中用justify-content,水平居中用：align-items）Flex布局（弹性布局）：是一种浏览器提倡的布局模型，布局网页更简单、灵活；space-around：将间距加在盒子的两侧，子级时间的距离是父级两头距离的2倍。当父级盒子小于子级盒子的总大小时，而且使用了flex弹性布局，此时子级盒子会被压缩。调整行的对齐方式：align-content （应用于父级）调节元素在主轴的对齐方式，在Flex布局模型中，调节。
+          css flex 弹性布局详解
+          12-30
+          案例基础布局 html <li class=item></li> <li class=item></li> <li class=item></li> <li class=item></li> css .box{ display: -webkit-flex; display: flex; } .item{ width: 200px;
+          详解CSS3伸缩布局盒模型Flex布局
+          09-22
+          主要介绍了详解CSS3伸缩布局盒模型Flex布局的相关资料，小编觉得挺不错的，现在分享给大家，也给大家做个参考。一起跟随小编过来看看吧
+          详解flex布局的元素如何分配容器的剩余空间
+          01-19
+          不得不感慨在 flex 之前 CSS 的布局功能之弱：基本只能使用一些并非为布局而设计的属性来实现想要的布局——float、inline-block、position、甚至是 table 等。而使用这些属性来实现各种布局效果，往往又会遇到相当...
+          详解flex实现左右布局中按钮溢出隐藏效果
+          09-22
+          主要介绍了详解flex实现左右布局中按钮溢出隐藏效果的相关资料，小编觉得挺不错的，现在分享给大家，也给大家做个参考。一起跟随小编过来看看吧
+          CSS3 Flex 弹性布局实例代码详解
+          01-19
+          //任何一个容器都可以指定为Flex布局。 .box{ display: flex; } //行内元素也可以使用Flex布局。 .box{ display: inline-flex; } //注意，设为Flex布局以后，子元素的float、clear和vertical-align属性将...
+          移动端开发之flex布局【这一篇就够了】
+          weixin_50539249的博客
+          1496
+          flex布局，flex布局父项常见属性，子项常见属性
+          Flex布局图文详解与示例代码
+          1458
+          Flex布局，按照官方的说法，即FlexiBle Box（弹性布局），是一种比较灵活的页面布局方式。在深入学习Flex布局前，我们需要了解一些与 Flex 相关的概念。 一、基础概念 首先，我们来了解一下Flex布局中的一些术语：Flex容器、Flex项目、主轴、交叉轴、主轴空间、交叉轴空间，如下图所示： 图1 容器与项目 使用 Flex 布局的元素，称之为Flex容器，简称 “容器”。它的所有子元素自动成为容器成员，称为flex item(Flex项目)，简称“项目”。 主轴、...
+          flex弹性布局（详解）
+          wshwsh_的博客
+          9741
+          Flex 是 Flexible Box 的缩写，意为"弹性布局"，用来为盒状模型提供最大的灵活性。CSS3 弹性盒（ Flexible Box 或 flexbox），是一种当页面需要适应不同的屏幕大小以及设备类型时确保元素拥有恰当的行为的布局方式。引入弹性盒布局模型的目的是提供一种更加有效的方式来对一个容器中的子元素进行排列、对齐和分配空白空间。弹性盒子由弹性容器(Flex container)和弹性子元素(Flex item)组成。
+          Flex布局图解
+          Aha<img src="../img/t01a8245891acdb3913.jpg" alt="">
+          678
+          一、Flex布局介绍 flex是Flexible Box的缩写，意思是弹性布局，能够为盒装模型提供最大的灵活性。 让一个盒子成为弹性盒子的方法就是添加display：flex .box{ display:flex; } 当然行内元素也可以使用flex布局 .box{ display:inline-flex; } 注意：设为flex布局后，子元素的fl...
+          CSS中flex布局详解
+          09-07
+          Flex布局是CSS3新增的一种一维布局，它提供了一种灵活的方式来排列和对齐元素。通过使用Flex容器和Flex项，可以轻松地实现响应式和可伸缩的布局。Flex布局的基础概念是Flex容器和Flex项。Flex容器是指应用了`display: flex`或`display: -webkit-flex`属性的父元素，它定义了一个Flex上下文环境。Flex项则是Flex容器中的直接子元素，它们被放置在Flex容器中，并根据其属性进行布局排列。 在Flex布局中，通过设置Flex属性，可以控制Flex项的尺寸、顺序和对齐方式。其中，`flex-grow`属性可以用来设置Flex项在空间分配时的放大比例，`flex-shrink`属性可以用来设置Flex项在空间不足时的缩小比例，`flex-basis`属性可以用来设置Flex项在主轴上的初始尺寸。 此外，Flex布局还提供了一些对齐方式的属性，例如`justify-content`用于水平对齐Flex项，`align-items`用于垂直对齐Flex项，`align-self`用于单个Flex项的对齐方式。这些属性可以根据需要进行设置，以实现不同的布局效果。 更进一步的了解Flex布局的使用和属性，你可以参考提供的链接，这些链接提供了详细的指南和案例，帮助你更好地理解和应用Flex布局。<span class="em">1</span><span class="em">2</span><span class="em">3</span><span class="em">4</span>
+          “相关推荐”对你有帮助么？
+
+          非常没帮助
+
+          没帮助
+
+          一般
+
+          有帮助
+
+          非常有帮助
+          关于我们
+          招贤纳士
+          商务合作
+          寻求报道
+
+          400-660-0108
+
+          kefu@csdn.net
+
+          在线客服
+          工作时间 8:30-22:00
+          公安备案号11010502030143
+          京ICP备19004658号
+          京网文〔2020〕1039-165号
+          经营性网站备案信息
+          北京互联网违法和不良信息举报中心
+          家长监护
+          网络110报警服务
+          中国互联网举报中心
+          Chrome商店下载
+          账号管理规范
+          版权与免责声明
+          版权申诉
+          出版物许可证
+          营业执照
+          ©1999-2024北京创新乐知网络技术有限公司
+
+          fish_zhangyu
+          码龄2年
+          暂无认证
+          2
+          原创
+          163万+
+          周排名
+          27万+
+          总排名
+          1万+
+          访问
+
+          等级
+          31
+          积分
+          1
+          粉丝
+          10
+          获赞
+          1
+          评论
+          31
+          收藏
+          新秀勋章
+          创作能手
+          私信
+          关注
+          写文章
+          搜博主文章
+  </p>
+  <p>
+          热门文章
+          flex布局（详解）  17298
+          微信小程序-边框样式显示不全的问题  1001
+          最新评论
+          flex布局（详解）
+          努力学习_提高自己: flex-wrap属性那里，值为wrap-reverse时，从下到上换行，图片应该是4和5在123的上面吧表情包
+
+          大家在看
+          6个适合在家做的副业兼职，做得好的月入过万，适合上班族和宝妈
+          java编辑器中如何调试程序?  249
+          React@16.x（15）PureComponent 和 memo
+          力扣 1题 两数之和（哈希） 记录
+          动态路由OSPF单区域和多区域配置实验
+          目录
+          一、什么是flex布局
+          二、基本概念
+          三、容器的属性
+          四、项目的属性<img src="../img/t01a8245891acdb3913.jpg" alt="">
+          最新文章
+          微信小程序-边框样式显示不全的问题
+          2023年1篇2022年1篇
+          创作活动
+
+
+
+          举报
+  </p>
+</div>
+<br>
+<br>
+<br>
+<!--实现壁纸网站多列图片效果-->
+<div class="many-img">
+
+  <h1> 多列布局实现多列图片壁纸网站效果，</h1>
+  <img src="../img/1.png">
+  <img src="../img/t01a8245891acdb3913.jpg">
+  <img src="../img/2.jpg">
+  <img src="../img/3.jpg">
+  <img src="../img/4.jpg">
+  <img src="../img/19.jpg">
+  <img src="../img/t01a8245891acdb3913.jpg">
+  <img src="../img/20.jpg">
+  <img src="../img/21.jpg">
+  <img src="../img/22.jpg">
+  <img src="../img/23.jpg">
+  <img src="../img/24.jpg">
+  <img src="../img/5.jpg">
+  <img src="../img/6.jpg">
+  <img src="../img/7.jpg">
+  <img src="../img/t01a8245891acdb3913.jpg">
+  <img src="../img/8.jpg">
+  <img src="../img/9.jpg">
+  <img src="../img/10.jpg">
+  <img src="../img/11.jpg">
+  <img src="../img/12.jpg">
+  <img src="../img/13.jpg">
+  <img src="../img/14.jpg">
+  <img src="../img/t01a8245891acdb3913.jpg">
+  <img src="../img/20.jpg">
+  <img src="../img/21.jpg">
+  <img src="../img/22.jpg">
+  <img src="../img/23.jpg">
+  <img src="../img/24.jpg">
+  <img src="../img/15.jpg">
+  <img src="../img/16.jpg">
+  <img src="../img/17.jpg">
+  <img src="../img/18.jpg">
+  <img src="../img/t01a8245891acdb3913.jpg">
+  <img src="../img/1.png">
+  <img src="../img/2.jpg">
+  <img src="../img/3.jpg">
+  <img src="../img/4.jpg">
+  <img src="../img/5.jpg">
+  <img src="../img/6.jpg">
+  <img src="../img/7.jpg">
+  <img src="../img/8.jpg">
+  <img src="../img/9.jpg">
+  <img src="../img/20.jpg">
+  <img src="../img/21.jpg">
+  <img src="../img/22.jpg">
+  <img src="../img/23.jpg">
+  <img src="../img/24.jpg">
+  <img src="../img/10.jpg">
+  <img src="../img/t01a8245891acdb3913.jpg">
+  <img src="../img/11.jpg">
+  <img src="../img/12.jpg">
+  <img src="../img/13.jpg">
+  <img src="../img/14.jpg">
+  <img src="../img/15.jpg">
+  <img src="../img/16.jpg">
+  <img src="../img/17.jpg">
+  <img src="../img/18.jpg">
+  <img src="../img/1.png">
+  <img src="../img/2.jpg">
+  <img src="../img/3.jpg">
+  <img src="../img/20.jpg">
+  <img src="../img/21.jpg">
+  <img src="../img/22.jpg">
+  <img src="../img/23.jpg">
+  <img src="../img/24.jpg">
+  <img src="../img/4.jpg">
+  <img src="../img/5.jpg">
+  <img src="../img/6.jpg">
+  <img src="../img/7.jpg">
+  <img src="../img/t01a8245891acdb3913.jpg">
+  <img src="../img/8.jpg">
+  <img src="../img/9.jpg">
+  <img src="../img/10.jpg">
+  <img src="../img/11.jpg">
+  <img src="../img/12.jpg">
+  <img src="../img/13.jpg">
+  <img src="../img/14.jpg">
+  <img src="../img/20.jpg">
+  <img src="../img/21.jpg">
+  <img src="../img/22.jpg">
+  <img src="../img/23.jpg">
+  <img src="../img/24.jpg">
+  <img src="../img/15.jpg">
+  <img src="../img/t01a8245891acdb3913.jpg">
+  <img src="../img/16.jpg">
+  <img src="../img/17.jpg">
+  <img src="../img/18.jpg">
+  <img src="../img/1.png">
+  <img src="../img/2.jpg">
+  <img src="../img/3.jpg">
+  <img src="../img/20.jpg">
+  <img src="../img/21.jpg">
+  <img src="../img/22.jpg">
+  <img src="../img/23.jpg">
+  <img src="../img/24.jpg">
+  <img src="../img/4.jpg">
+  <img src="../img/5.jpg">
+  <img src="../img/6.jpg">
+  <img src="../img/7.jpg">
+  <img src="../img/8.jpg">
+  <img src="../img/9.jpg">
+  <img src="../img/10.jpg">
+  <img src="../img/11.jpg">
+  <img src="../img/t01a8245891acdb3913.jpg">
+  <img src="../img/20.jpg">
+  <img src="../img/21.jpg">
+  <img src="../img/22.jpg">
+  <img src="../img/23.jpg">
+  <img src="../img/24.jpg">
+  <img src="../img/12.jpg">
+  <img src="../img/13.jpg">
+  <img src="../img/t01a8245891acdb3913.jpg">
+  <img src="../img/14.jpg">
+  <img src="../img/15.jpg">
+  <img src="../img/20.jpg">
+  <img src="../img/21.jpg">
+  <img src="../img/22.jpg">
+  <img src="../img/23.jpg">
+  <img src="../img/24.jpg">
+  <img src="../img/16.jpg">
+  <img src="../img/17.jpg">
+  <img src="../img/18.jpg">
+</div>
+</body>
+</html>
