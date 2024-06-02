@@ -1,0 +1,1026 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>flex布局demo</title>
+  <style>
+    .outer{
+      /*开启flex布局*/
+      display: flex;
+      background-color: gray;
+      width: 1000px;
+      height: 600px;
+    }
+    .inner{
+      width: 200px;
+      height: 200px;
+      background-color: skyblue;
+      border: 1px solid black;
+      /*元素宽高包含边框*/
+      box-sizing: border-box;
+    }
+
+
+    .outer2{
+      /*开启flex布局*/
+      display: flex;
+
+      /*默认主轴方向*/
+      flex-direction: row;
+
+      background-color: gray;
+      width: 1000px;
+      height: 600px;
+    }
+    .inner2{
+      width: 200px;
+      height: 200px;
+      background-color: skyblue;
+      border: 1px solid black;
+      /*元素宽高包含边框*/
+      box-sizing: border-box;
+    }
+
+
+    .outer3{
+      /*开启flex布局*/
+      display: flex;
+
+      flex-direction: row-reverse;
+
+
+      background-color: gray;
+      width: 1000px;
+      height: 600px;
+    }
+    .inner3{
+      width: 200px;
+      height: 200px;
+      background-color: skyblue;
+      border: 1px solid black;
+      /*元素宽高包含边框*/
+      box-sizing: border-box;
+    }
+
+    .outer4{
+      /*开启flex布局*/
+      display: flex;
+
+      flex-direction: column;
+
+
+      background-color: gray;
+      width: 1000px;
+      height: 600px;
+    }
+    .inner4{
+      width: 200px;
+      height: 200px;
+      background-color: skyblue;
+      border: 1px solid black;
+      /*元素宽高包含边框*/
+      box-sizing: border-box;
+    }
+
+    .outer5{
+      /*开启flex布局*/
+      display: flex;
+
+      flex-direction: column-reverse;
+
+
+      background-color: gray;
+      width: 1000px;
+      height: 600px;
+    }
+    .inner5{
+      width: 200px;
+      height: 200px;
+      background-color: skyblue;
+      border: 1px solid black;
+      /*元素宽高包含边框*/
+      box-sizing: border-box;
+    }
+
+    .outer6{
+      /*开启flex布局*/
+      display: flex;
+
+      flex-direction: row;
+
+      /*设置换行*/
+      flex-wrap: nowrap;
+
+
+      background-color: gray;
+      width: 1000px;
+      height: 600px;
+    }
+    .inner6{
+      width: 200px;
+      height: 200px;
+      background-color: skyblue;
+      border: 1px solid black;
+      /*元素宽高包含边框*/
+      box-sizing: border-box;
+    }
+
+    .outer7{
+      /*开启flex布局*/
+      display: flex;
+      /*主轴方向*/
+      flex-direction: row;
+      /*设置换行*/
+      flex-wrap: wrap;
+      background-color: gray;
+      width: 1000px;
+      height: 600px;
+    }
+    .inner7{
+      width: 200px;
+      height: 200px;
+      background-color: skyblue;
+      border: 1px solid black;
+      /*元素宽高包含边框*/
+      box-sizing: border-box;
+    }
+
+    .outer8{
+      /*开启flex布局*/
+      display: flex;
+      /*主轴方向*/
+      flex-direction: row;
+      /*设置换行*/
+      flex-wrap: wrap-reverse;
+      background-color: gray;
+      width: 1000px;
+      height: 600px;
+    }
+    .inner8{
+      width: 200px;
+      height: 200px;
+      background-color: skyblue;
+      border: 1px solid black;
+      /*元素宽高包含边框*/
+      box-sizing: border-box;
+    }
+    .outer9{
+      /*开启flex布局*/
+      display: flex;
+      /*主轴方向*/
+      /*flex-direction: row;*/
+      /*设置换行*/
+      /*flex-wrap: nowrap;*/
+
+      /*复合属性设置 flex-direction，flex-wrap*/
+      flex-flow: row-reverse wrap-reverse;
+
+      background-color: gray;
+      width: 1000px;
+      height: 600px;
+    }
+    .inner9{
+      width: 200px;
+      height: 200px;
+      background-color: skyblue;
+      border: 1px solid black;
+      /*元素宽高包含边框*/
+      box-sizing: border-box;
+    }
+
+    .outer10{
+      /*开启flex布局*/
+      display: flex;
+      /*主轴方向*/
+      /*flex-direction: row;*/
+      /*设置主轴换行*/
+      /*flex-wrap: nowrap;*/
+
+      /*复合属性设置 flex-direction，flex-wrap*/
+      flex-flow: row nowrap;
+
+      /* 设置主轴对齐方式 默认的*/
+      justify-content: flex-start;
+
+      background-color: gray;
+      width: 1000px;
+      height: 600px;
+    }
+    .inner10{
+      width: 200px;
+      height: 200px;
+      background-color: skyblue;
+      border: 1px solid black;
+      /*元素宽高包含边框*/
+      box-sizing: border-box;
+    }
+
+
+    .outer11{
+      /*开启flex布局*/
+      display: flex;
+      /*复合属性设置 flex-direction，flex-wrap*/
+      flex-flow: row nowrap;
+      /* 设置主轴对齐方式 */
+      justify-content: flex-end;
+
+      background-color: gray;
+      width: 1000px;
+      height: 600px;
+    }
+    .inner11{
+      width: 200px;
+      height: 200px;
+      background-color: skyblue;
+      border: 1px solid black;
+      /*元素宽高包含边框*/
+      box-sizing: border-box;
+    }
+
+    .outer12{
+      /*开启flex布局*/
+      display: flex;
+      /*复合属性设置 flex-direction，flex-wrap*/
+      flex-flow: row nowrap;
+      /* 设置主轴对齐方式 */
+      justify-content: center;
+
+      background-color: gray;
+      width: 1000px;
+      height: 600px;
+    }
+    .inner12{
+      width: 200px;
+      height: 200px;
+      background-color: skyblue;
+      border: 1px solid black;
+      /*元素宽高包含边框*/
+      box-sizing: border-box;
+    }
+
+    .outer13{
+      /*开启flex布局*/
+      display: flex;
+      /*复合属性设置 flex-direction，flex-wrap*/
+      flex-flow: row nowrap;
+      /* 设置主轴对齐方式 */
+      justify-content: space-between;
+
+      background-color: gray;
+      width: 1000px;
+      height: 600px;
+    }
+    .inner13{
+      width: 200px;
+      height: 200px;
+      background-color: skyblue;
+      border: 1px solid black;
+      /*元素宽高包含边框*/
+      box-sizing: border-box;
+    }
+
+    .outer14{
+      /*开启flex布局*/
+      display: flex;
+      /*复合属性设置 flex-direction，flex-wrap*/
+      flex-flow: row nowrap;
+      /* 设置主轴对齐方式 */
+      justify-content: space-around;
+
+      background-color: gray;
+      width: 1000px;
+      height: 600px;
+    }
+    .inner14{
+      width: 200px;
+      height: 200px;
+      background-color: skyblue;
+      border: 1px solid black;
+      /*元素宽高包含边框*/
+      box-sizing: border-box;
+    }
+
+
+
+    .outer15{
+      /*开启flex布局*/
+      display: flex;
+      /*复合属性设置 flex-direction，flex-wrap*/
+      flex-flow: row wrap;
+      /* 设置主轴对齐方式 */
+      justify-content: space-evenly;
+
+      background-color: gray;
+      width: 1000px;
+      height: 600px;
+    }
+    .inner15{
+      width: 200px;
+      height: 200px;
+      background-color: skyblue;
+      border: 1px solid black;
+      /*元素宽高包含边框*/
+      box-sizing: border-box;
+    }
+
+
+    .outer16{
+      /*开启flex布局*/
+      display: flex;
+      /*复合属性设置 flex-direction，flex-wrap*/
+      flex-flow: row wrap;
+      /* 设置主轴对齐方式 */
+      justify-content: flex-start;
+      /* 设置侧轴对齐方式*/
+      align-items: flex-start;
+      background-color: gray;
+      width: 1000px;
+      height: 600px;
+    }
+    .inner16{
+      width: 200px;
+      height: 200px;
+      background-color: skyblue;
+      border: 1px solid black;
+      /*元素宽高包含边框*/
+      box-sizing: border-box;
+    }
+
+
+    .outer17{
+      /*开启flex布局*/
+      display: flex;
+      /*复合属性设置 flex-direction，flex-wrap*/
+      flex-flow: row wrap;
+      /* 设置主轴对齐方式 */
+      justify-content: flex-start;
+      /* 设置侧轴对齐方式*/
+      align-items: flex-end;
+      background-color: gray;
+      width: 1000px;
+      height: 600px;
+    }
+    .inner17{
+      width: 200px;
+      height: 200px;
+      background-color: skyblue;
+      border: 1px solid black;
+      /*元素宽高包含边框*/
+      box-sizing: border-box;
+    }
+
+    .outer18{
+      /*开启flex布局*/
+      display: flex;
+      /*复合属性设置 flex-direction，flex-wrap*/
+      flex-flow: row wrap;
+      /* 设置主轴对齐方式 */
+      justify-content: flex-start;
+      /* 设置侧轴对齐方式*/
+      align-items: center;
+      background-color: gray;
+      width: 1000px;
+      height: 600px;
+    }
+    .inner18{
+      width: 200px;
+      height: 200px;
+      background-color: skyblue;
+      border: 1px solid black;
+      /*元素宽高包含边框*/
+      box-sizing: border-box;
+    }
+
+    .outer19{
+      /*开启flex布局*/
+      display: flex;
+      /*复合属性设置 flex-direction，flex-wrap*/
+      flex-flow: row wrap;
+      /* 设置主轴对齐方式 */
+      justify-content: flex-start;
+      /* 设置侧轴对齐方式*/
+      align-items: baseline;
+      background-color: gray;
+      width: 1000px;
+      height: 600px;
+    }
+    .inner19{
+      width: 200px;
+      height: 200px;
+      background-color: skyblue;
+      border: 1px solid black;
+      /*元素宽高包含边框*/
+      box-sizing: border-box;
+    }
+    .inner19-2{
+      font-size: 30px;
+    }
+    .inner19-3{
+      font-size: 18px;
+    }
+
+
+    .outer20{
+      /*开启flex布局*/
+      display: flex;
+      /*复合属性设置 flex-direction，flex-wrap*/
+      flex-flow: row wrap;
+      /* 设置主轴对齐方式 */
+      justify-content: flex-start;
+      /* 设置侧轴对齐方式*/
+      align-items: stretch;
+      background-color: gray;
+      width: 1000px;
+      height: 600px;
+    }
+    .inner20{
+      width: 200px;
+      height: 200px;
+      background-color: skyblue;
+      border: 1px solid black;
+      /*元素宽高包含边框*/
+      box-sizing: border-box;
+    }
+
+    .inner20-1{
+      width: 200px;
+      /*height: 200px;*/
+      background-color: skyblue;
+      border: 1px solid black;
+      /*元素宽高包含边框*/
+      box-sizing: border-box;
+    }
+    .inner20-2{
+      width: 200px;
+      /*height: 200px;*/
+      background-color: skyblue;
+      border: 1px solid black;
+      /*元素宽高包含边框*/
+      box-sizing: border-box;
+    }
+
+
+    .outer21{
+      /*开启flex布局*/
+      display: flex;
+      /*复合属性设置 flex-direction，flex-wrap*/
+      flex-flow: row wrap;
+      /* 设置主轴对齐方式 */
+      justify-content: flex-start;
+      /*设置侧轴对齐方式 多行情况下*/
+      align-content: flex-start;
+
+      background-color: gray;
+      width: 1000px;
+      height: 900px;
+    }
+    .inner21{
+      width: 200px;
+      height: 200px;
+      background-color: skyblue;
+      border: 1px solid black;
+      /*元素宽高包含边框*/
+      box-sizing: border-box;
+    }
+
+    .outer22{
+      /*开启flex布局*/
+      display: flex;
+      /*复合属性设置 flex-direction，flex-wrap*/
+      flex-flow: row wrap;
+      /* 设置主轴对齐方式 */
+      justify-content: flex-start;
+      /*设置侧轴对齐方式 多行情况下*/
+      align-content: flex-end;
+
+      background-color: gray;
+      width: 1000px;
+      height: 900px;
+    }
+    .inner22{
+      width: 200px;
+      height: 200px;
+      background-color: skyblue;
+      border: 1px solid black;
+      /*元素宽高包含边框*/
+      box-sizing: border-box;
+    }
+
+    .outer23{
+      /*开启flex布局*/
+      display: flex;
+      /*复合属性设置 flex-direction，flex-wrap*/
+      flex-flow: row wrap;
+      /* 设置主轴对齐方式 */
+      justify-content: flex-start;
+      /*设置侧轴对齐方式 多行情况下*/
+      align-content: center;
+
+      background-color: gray;
+      width: 1000px;
+      height: 900px;
+    }
+    .inner23{
+      width: 200px;
+      height: 200px;
+      background-color: skyblue;
+      border: 1px solid black;
+      /*元素宽高包含边框*/
+      box-sizing: border-box;
+    }
+
+    .outer24{
+      /*开启flex布局*/
+      display: flex;
+      /*复合属性设置 flex-direction，flex-wrap*/
+      flex-flow: row wrap;
+      /* 设置主轴对齐方式 */
+      justify-content: flex-start;
+      /*设置侧轴对齐方式 多行情况下*/
+      align-content: space-between;
+
+      background-color: gray;
+      width: 1000px;
+      height: 900px;
+    }
+    .inner24{
+      width: 200px;
+      height: 200px;
+      background-color: skyblue;
+      border: 1px solid black;
+      /*元素宽高包含边框*/
+      box-sizing: border-box;
+    }
+
+    .outer25{
+      /*开启flex布局*/
+      display: flex;
+      /*复合属性设置 flex-direction，flex-wrap*/
+      flex-flow: row wrap;
+      /* 设置主轴对齐方式 */
+      justify-content: flex-start;
+      /*设置侧轴对齐方式 多行情况下*/
+      align-content: space-evenly;
+
+      background-color: gray;
+      width: 1000px;
+      height: 900px;
+    }
+    .inner25{
+      width: 200px;
+      height: 200px;
+      background-color: skyblue;
+      border: 1px solid black;
+      /*元素宽高包含边框*/
+      box-sizing: border-box;
+    }
+
+    .outer26{
+      /*开启flex布局*/
+      display: flex;
+      /*复合属性设置 flex-direction，flex-wrap*/
+      flex-flow: row wrap;
+      /* 设置主轴对齐方式 */
+      justify-content: flex-start;
+      /*设置侧轴对齐方式 多行情况下*/
+      align-content: space-around;
+
+      background-color: gray;
+      width: 1000px;
+      height: 900px;
+    }
+    .inner26{
+      width: 200px;
+      height: 200px;
+      background-color: skyblue;
+      border: 1px solid black;
+      /*元素宽高包含边框*/
+      box-sizing: border-box;
+    }
+
+    .outer27{
+      /*开启flex布局*/
+      display: flex;
+      /*复合属性设置 flex-direction，flex-wrap*/
+      flex-flow: row wrap;
+      /* 设置主轴对齐方式 */
+      justify-content: flex-start;
+      /*设置侧轴对齐方式 多行情况下*/
+      align-content: stretch;
+
+      background-color: gray;
+      width: 1000px;
+      height: 900px;
+    }
+    .inner27{
+      width: 200px;
+      background-color: skyblue;
+      border: 1px solid black;
+      /*元素宽高包含边框*/
+      box-sizing: border-box;
+    }
+
+    .outer28{
+      width: 400px;
+      height: 400px;
+      background-color: gray;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .inner28{
+      width: 100px;
+      height: 100px;
+      background-color: orange;
+    }
+
+    .outer29{
+      width: 400px;
+      height: 400px;
+      background-color: gray;
+      display: flex;
+
+    }
+    .inner29{
+      width: 100px;
+      height: 100px;
+      background-color: orange;
+      margin: auto;
+    }
+p{
+  color: red;
+}
+  </style>
+</head>
+<body>
+
+<h1>1. 开启flex布局</h1>
+<p>ps: 开启flex布局默认排列方式如下</p>
+
+<div class="outer">
+  <div class="inner">1</div>
+  <div class="inner">2</div>
+  <div class="inner">3</div>
+</div>
+
+<h1>2. 开启flex布局后flex容器下所有子元素块化，无论是块、行内、行内块</h1>
+<div class="outer">
+  <div class="inner">div1</div>
+  <span class="inner">这是span标签可以设置宽高</span>
+  <span class="inner">这是span标签可以设置宽高</span>
+</div>
+
+<p>ps: 一个元素可以同时是flex容器flex项目</p>
+<p>ps: flex容器下的子元素自动成为flex项目，！仅子元素成为flex项目，不包含孙及重孙元素</p>
+
+
+
+<h1>3. flex布局主轴侧轴</h1>
+
+<h2>3.1 默认主轴方向，</h2>
+<p>ps: 默认主轴重左到右，默认侧轴重上到下</p>
+<p>ps: flex-direction: row;</p>
+
+<div class="outer2">
+  <div class="inner2">1</div>
+  <div class="inner2">2</div>
+  <div class="inner2">3</div>
+</div>
+
+<h2>3.2 主轴从右到左，</h2>
+<p>ps: flex-direction: row-reverse;</p>
+
+<div class="outer3">
+  <div class="inner3">1</div>
+  <div class="inner3">2</div>
+  <div class="inner3">3</div>
+</div>
+
+
+<h2>3.3 主轴从上到下，</h2>
+<p>ps: flex-direction: column;</p>
+
+<div class="outer4">
+  <div class="inner4">1</div>
+  <div class="inner4">2</div>
+  <div class="inner4">3</div>
+</div>
+
+<h2>3.4 主轴从下到上</h2>
+<p>ps: flex-direction: column-reverse;</p>
+
+<div class="outer5">
+  <div class="inner5">1</div>
+  <div class="inner5">2</div>
+  <div class="inner5">3</div>
+</div>
+
+
+
+<h1>4. 主轴换行方式</h1>
+
+<h2>4.1 默认换行方式</h2>
+<p>ps: flex-wrap: nowrap;默认不换行自动计算宽度如果一行容不下则调整每个元素宽度至一行能容下</p>
+<div class="outer6">
+  <div class="inner6">1</div>
+  <div class="inner6">2</div>
+  <div class="inner6">3</div>
+  <div class="inner6">4</div>
+  <div class="inner6">5</div>
+  <div class="inner6">6</div>
+  <div class="inner6">7</div>
+  <div class="inner6">8</div>
+  <div class="inner6">9</div>
+  <div class="inner6">10</div>
+  <div class="inner6">11</div>
+  <div class="inner6">12</div>
+</div>
+
+
+<h2>4.2 wrap换行</h2>
+<p>ps: flex-wrap: wrap;自动计算宽度如果一行容不下则换行</p>
+<div class="outer7">
+  <div class="inner7">1</div>
+  <div class="inner7">2</div>
+  <div class="inner7">3</div>
+  <div class="inner7">4</div>
+  <div class="inner7">5</div>
+  <div class="inner7">6</div>
+  <div class="inner7">7</div>
+  <div class="inner7">8</div>
+  <div class="inner7">9</div>
+  <div class="inner7">10</div>
+  <div class="inner7">11</div>
+  <div class="inner7">12</div>
+</div>
+
+<h2>4.3 反向换行 </h2>
+<p>ps: flex-wrap: wrap-reverse;自动计算宽度如果一行容不下则反向换行</p>
+<div class="outer8">
+  <div class="inner8">1</div>
+  <div class="inner8">2</div>
+  <div class="inner8">3</div>
+  <div class="inner8">4</div>
+  <div class="inner8">5</div>
+  <div class="inner8">6</div>
+  <div class="inner8">7</div>
+  <div class="inner8">8</div>
+
+</div>
+
+<h1>5 flex-flow 复合属性</h1>
+<p>ps: flex-flow: row-reverse wrap-reverse; 复合属性设置 flex-direction，flex-wrap</p>
+<div class="outer9">
+  <div class="inner9">1</div>
+  <div class="inner9">2</div>
+  <div class="inner9">3</div>
+  <div class="inner9">4</div>
+  <div class="inner9">5</div>
+  <div class="inner9">6</div>
+  <div class="inner9">7</div>
+  <div class="inner9">8</div>
+  <div class="inner9">9</div>
+  <div class="inner9">10</div>
+  <div class="inner9">11</div>
+</div>
+
+
+<h1>6 主轴对齐方式</h1>
+
+<h2>6.1 默认对齐</h2>
+<p>ps: justify-content: flex-start;</p>
+<p>ps: 主轴起始位置排列，项目紧贴</p>
+<div class="outer10">
+  <div class="inner10">1</div>
+  <div class="inner10">2</div>
+  <div class="inner10">3</div>
+</div>
+
+<h2>6.2 主轴结束位置排列</h2>
+<p>ps: justify-content: flex-end;</p>
+<p>ps: 主轴结束位置排列，项目紧贴</p>
+<div class="outer11">
+  <div class="inner11">1</div>
+  <div class="inner11">2</div>
+  <div class="inner11">3</div>
+</div>
+
+<h2>6.3 主轴中间位置排列</h2>
+<p>ps: justify-content: center;</p>
+<p>ps: 主轴中间位置排列,项目紧贴</p>
+<div class="outer12">
+  <div class="inner12">1</div>
+  <div class="inner12">2</div>
+  <div class="inner12">3</div>
+</div>
+
+<h2>6.4 均匀分布</h2>
+<p>ps: justify-content: space-between;</p>
+<p>ps: 均匀分布在主轴上紧贴两边</p>
+<div class="outer13">
+  <div class="inner13">1</div>
+  <div class="inner13">2</div>
+  <div class="inner13">3</div>
+</div>
+
+<h2>6.5 均匀分布</h2>
+<p>ps: justify-content: space-around;</p>
+<p>ps: 均匀分布在主轴上,边缘距离是项目之间距离的一半</p>
+<div class="outer14">
+  <div class="inner14">1</div>
+  <div class="inner14">2</div>
+  <div class="inner14">3</div>
+</div>
+
+<h2>6.6 均匀分布</h2>
+<p>ps: justify-content: space-evenly;</p>
+<p>ps: 均匀分布在主轴上,边缘距离是项目之间距离一致</p>
+<div class="outer15">
+  <div class="inner15">1</div>
+  <div class="inner15">2</div>
+  <div class="inner15">3</div>
+  <div class="inner15">4</div>
+  <div class="inner15">5</div>
+  <div class="inner15">6</div>
+  <div class="inner15">7</div>
+</div>
+
+<h1>7 侧轴对齐方式 (只有一行情况)</h1>
+
+<h2>7.1 侧轴起始位置排列，项目紧贴</h2>
+<p>ps: align-items: flex-start;</p>
+<p>ps: 侧轴起始位置排列，项目紧贴</p>
+<div class="outer16">
+  <div class="inner16">1</div>
+  <div class="inner16">2</div>
+  <div class="inner16">3</div>
+</div>
+
+<h2>7.2 侧轴终点位置排列，项目紧贴</h2>
+<p>ps: align-items: flex-end;</p>
+<p>ps: 侧轴终点位置排列，项目紧贴</p>
+<div class="outer17">
+  <div class="inner17">1</div>
+  <div class="inner17">2</div>
+  <div class="inner17">3</div>
+</div>
+
+
+<h2>7.3 侧轴中间位置排列，项目紧贴</h2>
+<p>ps: align-items: center;</p>
+<div class="outer18">
+  <div class="inner18">1</div>
+  <div class="inner18">2</div>
+  <div class="inner18">3</div>
+</div>
+
+<h2>7.4 侧轴基线对齐</h2>
+<p>ps: align-items: baseline;</p>
+<p>ps: 基于项目中第一行文字的基线对齐</p>
+<div class="outer19">
+  <div class="inner19">1 x</div>
+  <div class="inner19 inner19-2">2 x</div>
+  <div class="inner19 inner19-3">3 X</div>
+</div>
+
+<h2>7.5 伸缩对齐，默认值</h2>
+<p>ps: align-items: stretch;</p>
+<p>ps: 侧轴的默认对齐方式，将项目拉伸至填满整个容器的高度（前提是伸缩项目没用设置高度，设置了高度则无效）</p>
+<div class="outer20">
+  <div class="inner20">1</div>
+  <div class=" inner20-1">2</div>
+  <div class=" inner20-2">3</div>
+</div>
+
+<h1>8 侧轴对齐方式 (多行情况)</h1>
+
+<h2>8.1 侧轴起始位置对齐</h2>
+<p>ps: align-content: flex-start;</p>
+<div class="outer21">
+  <div class="inner21" style="height: 200px">1</div>
+  <div class=" inner21" style="height: 100px">2</div>
+  <div class=" inner21" style="height: 300px">3</div>
+  <div class="inner21" >4</div>
+  <div class="inner21" >5</div>
+  <div class="inner21" >6</div>
+  <div class="inner21" >7</div>
+  <div class="inner21" >8</div>
+  <div class="inner21" >9</div>
+  <div class="inner21" >10</div>
+  <div class="inner21" >11</div>
+</div>
+
+
+<h2>8.2 侧轴终点位置对齐</h2>
+<p>ps: align-content: flex-end;</p>
+<div class="outer22">
+  <div class="inner22" style="height: 200px">1</div>
+  <div class=" inner22" style="height: 100px">2</div>
+  <div class=" inner22" style="height: 300px">3</div>
+  <div class="inner22" >4</div>
+  <div class="inner22" >5</div>
+  <div class="inner22" >6</div>
+  <div class="inner22" >7</div>
+  <div class="inner22" >8</div>
+  <div class="inner22" >9</div>
+  <div class="inner22" >10</div>
+  <div class="inner22" >11</div>
+</div>
+
+<h2>8.3 侧轴中间位置对齐</h2>
+<p>ps: align-content: center;</p>
+<div class="outer23">
+  <div class="inner23" style="height: 200px">1</div>
+  <div class=" inner23" style="height: 100px">2</div>
+  <div class=" inner23" style="height: 300px">3</div>
+  <div class="inner23" >4</div>
+  <div class="inner23" >5</div>
+  <div class="inner23" >6</div>
+  <div class="inner23" >7</div>
+  <div class="inner23" >8</div>
+  <div class="inner23" >9</div>
+  <div class="inner23" >10</div>
+  <div class="inner23" >11</div>
+</div>
+
+<h2>8.4 侧轴两端紧贴对齐，中间均分</h2>
+<p>ps: align-content: space-between;</p>
+<div class="outer24">
+  <div class="inner24" style="height: 200px">1</div>
+  <div class=" inner24" style="height: 100px">2</div>
+  <div class=" inner24" style="height: 300px">3</div>
+  <div class="inner24" >4</div>
+  <div class="inner24" >5</div>
+  <div class="inner24" >6</div>
+  <div class="inner24" >7</div>
+  <div class="inner24" >8</div>
+  <div class="inner24" >9</div>
+  <div class="inner24" >10</div>
+  <div class="inner24" >11</div>
+</div>
+
+<h2>8.5 侧轴上完全均分</h2>
+<p>ps: align-content: space-evenly;</p>
+<p>ps: 边缘和项目之间距离完全相等</p>
+<div class="outer25">
+  <div class="inner25" style="height: 200px">1</div>
+  <div class=" inner25" style="height: 100px">2</div>
+  <div class=" inner25" style="height: 300px">3</div>
+  <div class="inner25" >4</div>
+  <div class="inner25" >5</div>
+  <div class="inner25" >6</div>
+  <div class="inner25" >7</div>
+  <div class="inner25" >8</div>
+  <div class="inner25" >9</div>
+  <div class="inner25" >10</div>
+  <div class="inner25" >11</div>
+</div>
+
+
+<h2>8.6 侧轴上项目之间距离相等比边缘距离大一倍</h2>
+<p>ps: align-content: space-around;</p>
+<p>ps: 项目之间距离比边缘距离大一倍</p>
+<div class="outer26">
+  <div class="inner26" >1</div>
+  <div class=" inner26" >2</div>
+  <div class=" inner26" >3</div>
+  <div class="inner26" >4</div>
+  <div class="inner26" >5</div>
+  <div class="inner26" >6</div>
+  <div class="inner26" >7</div>
+  <div class="inner26" >8</div>
+  <div class="inner26" >9</div>
+  <div class="inner26" >10</div>
+  <div class="inner26" >11</div>
+</div>
+
+<h2>8.7 侧轴上拉伸，占满整个侧轴</h2>
+<p>ps: align-content: stretch;</p>
+<p>ps: 侧轴上拉伸，占满整个侧轴(前提项目没设置高度)</p>
+<div class="outer27">
+  <div class="inner27" >1</div>
+  <div class=" inner27" >2</div>
+  <div class=" inner27" >3</div>
+  <div class="inner27" >4</div>
+  <div class="inner27" >5</div>
+  <div class="inner27" >6</div>
+</div>
+
+<h1>9 flex 元素水平垂直居中方式</h1>
+<h2>9.1 方式一</h2>
+<p>      display: flex; <br>
+  justify-content: center;<br>
+  align-items: center;</p>
+
+<div class="outer28">
+  <div class="inner28"></div>
+</div>
+
+<h2>9.2 方式二</h2>
+<p>   flex容器   display: flex; <br> flex项目   margin: auto;</p>
+<p>flex项目设置 margin: auto 将自动居中</p>
+<div class="outer29">
+  <div class="inner29"></div>
+</div>
+</body>
+</html>
