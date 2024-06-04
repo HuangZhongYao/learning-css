@@ -647,6 +647,89 @@
       background-color: orange;
       margin: auto;
     }
+
+    .outer30{
+      width: 400px;
+      height: 400px;
+      background-color: gray;
+      display: flex;
+      flex-direction: row;
+
+    }
+    .inner30{
+      width: 100px;
+      height: 100px;
+      background-color: orange;
+      border: 1px solid black;
+      box-sizing: border-box;
+    }
+
+    .inner30-2{
+      /*设置主轴方向的基准长度*/
+     flex-basis: 250px  ;
+    }
+
+    .outer31{
+      width: 400px;
+      height: 400px;
+      background-color: gray;
+      display: flex;
+      flex-direction: column;
+
+    }
+    .inner31{
+      width: 100px;
+      height: 100px;
+      background-color: orange;
+      border: 1px solid black;
+      box-sizing: border-box;
+    }
+
+    .inner31-2{
+      /*设置主轴方向的基准长度*/
+      flex-basis: 250px;
+    }
+
+    .outer32{
+      width: 600px;
+      height: 400px;
+      background-color: gray;
+      display: flex;
+      flex-direction: row;
+
+    }
+    .inner32{
+      width: 100px;
+      height: 100px;
+      background-color: orange;
+      border: 1px solid black;
+      box-sizing: border-box;
+      /*设置放大比列*/
+      flex-grow: 1;
+    }
+
+    .outer33{
+      width: 600px;
+      height: 400px;
+      background-color: gray;
+      display: flex;
+      flex-direction: row;
+
+    }
+    .inner33{
+      width: 100px;
+      height: 100px;
+      background-color: orange;
+      border: 1px solid black;
+      box-sizing: border-box;
+      /*设置压缩比列*/
+      flex-shrink: 1;
+    }
+
+    .inner33-2{
+      width: 200px;
+    }
+
 p{
   color: red;
 }
@@ -1022,5 +1105,69 @@ p{
 <div class="outer29">
   <div class="inner29"></div>
 </div>
+
+
+<h1>10 flex基准长度</h1>
+<p>
+  ps: <br>
+  flex-basis: 250px; 设置的是主轴方向的基准长度会让宽或高失效 <br>
+  主轴横向宽度失效，主轴纵向高度失效。<br>
+  默认值 flex-basis: auto;即flex项目的宽或高。<br>
+  浏览器根据这个值计算主轴上是否还有多余空间
+</p>
+
+<h2>10.1 主轴横向</h2>
+<p>
+<p>
+  flex-direction: row;<br>
+  flex-basis: 250px;
+</p>
+</p>
+<div class="outer30">
+  <div class="inner30">1</div>
+  <div class="inner30 inner30-2">2  flex-basis: 250px;</div>
+  <div class="inner30">3</div>
+</div>
+
+<h2>10.2 主轴纵向</h2>
+<p>
+  flex-direction: column;<br>
+  flex-basis: 250px;
+</p>
+<div class="outer31">
+  <div class="inner31">1</div>
+  <div class="inner31 inner31-2">2  flex-basis: 250px;</div>
+  <div class="inner31">3</div>
+</div>
+
+
+<h1>11 flex伸缩布局 伸</h1>
+
+<p>
+  flex-grow: 1;<br>
+  默认值: 0 不拉伸<br>
+  定义flex项目的放大伸缩比列，主轴存在多余空间项目瓜分剩余空间时瓜分比列。
+</p>
+<div class="outer32">
+  <div class="inner32">1</div>
+  <div class="inner32">2</div>
+  <div class="inner32">3</div>
+</div>
+
+<h1>12 flex伸缩布局 缩</h1>
+
+<p>
+  flex-shrink: 1;<br>
+  默认值: 1 <br>
+  定义flex项目的压缩比列，如果父元素空间不够容纳flex项目则压缩。br
+  注意不开启换行时生效。
+</p>
+
+<div class="outer33">
+  <div class="inner33">1</div>
+  <div class="inner33 inner33-2">2</div>
+  <div class="inner33">3</div>
+</div>
+
 </body>
 </html>

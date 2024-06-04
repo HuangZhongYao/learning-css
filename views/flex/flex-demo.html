@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <link rel="stylesheet" href="../../css/reset.css" type="text/css">
+  <style>
+    .header{
+      height: 70px;
+      /*background-color: rgb(0,0,0.3);*/
+      display: flex;
+      padding-left: 25px;
+      padding-right: 25px;
+      justify-content: space-between;
+      color: white;
+    }
+
+    .header img{
+      height: 70px;
+    }
+
+    .top-nav{
+      background-color: #3D4450;
+      height: 70px;
+      display: flex;
+
+      justify-content: center;
+      align-items: center;
+    }
+
+    .top-nav .top-item{
+      margin-right: 25px;
+padding: 015px;
+    }
+
+    .top-nav .top-item:last-child{
+      margin-right: 0;
+
+    }
+
+    body{
+      background-image: url("../../img/t01a8245891acdb3913.jpg");
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+
+    .content{
+      height: calc(100vh - 70px);
+      display: flex;
+    }
+
+    .content-main{
+
+      margin: auto;
+      display: flex;
+
+    }
+
+    .content-main .content-item{
+      width: 150px;
+      height: 200px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      text-align: center;
+      color: white;
+      border: 1px solid black;
+      box-sizing: border-box;
+      border-radius: 15px;
+      margin: 0 15px;
+    }
+
+    .content-main .content-item:hover{
+      /* 偏移量X | 偏移量Y | 模糊半径 | 阴影尺寸 | 阴影颜色 */
+      box-shadow: 0 0 5px 6px black;
+      transform: scale(1.05);
+      transition: 0.4s;
+    }
+
+    .content-main .content-item:nth-child(1){
+      background-color: #3D4450;
+    }
+
+    .content-main .content-item:nth-child(2){
+      background-color: green;
+    }
+
+    .content-main .content-item:nth-child(3){
+      background-color: yellow;
+    }
+
+    .content-main .content-item:nth-child(4){
+      background-color: orange;
+    }
+
+    .content-main .content-item:nth-child(5){
+      background-color: skyblue;
+    }
+
+  </style>
+</head>
+<body>
+<header class="header">
+  <a href="#">
+    <img src="../../icon.png">
+  </a>
+
+  <div class="top-nav">
+
+    <div class="top-item">
+
+      <span>我的订单</span>
+    </div>
+
+    <div class="top-item">
+
+      <span>商城中心</span>
+    </div>
+
+    <div class="top-item">
+
+      <span>关于我的</span>
+    </div>
+
+  </div>
+</header>
+
+<div class="content">
+  <div class="content-main">
+    <div class="content-item">
+      <img src="../../img/5.jpg" alt="2"/>
+      我的邮箱
+    </div>
+
+    <div class="content-item">
+      <img src="../../img/4.jpg" alt="2"/>
+      我的微信
+    </div>
+
+    <div class="content-item">
+      <img src="../../img/1.png" alt="1"/>
+      我的电话
+    </div>
+
+    <div class="content-item">
+      <img src="../../img/2.jpg" alt="2"/>
+      我的地址
+    </div>
+
+    <div class="content-item">
+      <img src="../../img/3.jpg" alt="3"/>
+      我的QQ</div>
+  </div>
+
+</div>
+
+</body>
+</html>
