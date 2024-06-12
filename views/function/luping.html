@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>webRTC录屏</title>
+</head>
+<body>
+
+<button id="startRecording">开始录屏</button>
+<button id="stopRecording">停止录屏</button>
+
+<script>
+
+  // 定义媒体录制器对象
+  let mediaRecorder;
+  // 用于存储录制的数据片段
+  let chunks = [];
+  // 屏幕共享的媒体流
+  let stream;
+
+  // 开始录屏的函数
+  const startRecording = async () => {
+    try {
+
+      // 获取屏幕共享的媒体流
+      stream = await navigator.mediaDevices.getDisplayMedia({
+        // 录制屏幕
+        video: true,
+        // 录制麦克风
+        audio: true
+      });
+
+      // 创建媒体录制器，并关联媒体流
+      mediaRecorder = new MediaRecorder(stream);
+
+      // 当有数据可用时的处理函数
+      mediaRecorder.ondataavailable = event => {
+        // 将数据添加到数据片段数组
+        chunks.push(event.data);
+      };
+
+      // 监听停止记录时
+      mediaRecorder.onstop = stopEvent => {
+        // 创建一个包含录制数据的 Blob 对象, 设置视频格式mp4
+        const blob = new Blob(chunks, {type: 'video/mp4'});
+        // 创建可访问该 Blob 的 URL
+        const url = URL.createObjectURL(blob);
+        // 创建一个a标签链接元素
+        const a = document.createElement('a');
+        // 设置链接的地址为 Blob 的 URL
+        a.href = url;
+        // 设置下载的文件名
+        a.download = 'recording.mp4';
+        // 模拟点击进行下载
+        a.click();
+        // 使用完删除
+        a.remove();
+
+        // 创建一个video元素用于预览
+        let videoElement = document.createElement('video');
+        videoElement.id = 'previewVideo';
+        videoElement.width = 600;
+        videoElement.height = 400;
+        videoElement.controls = true; // 添加控制条
+        document.body.appendChild(videoElement); // 将video元素添加到页面中
+        // 将Blob URL设置为video元素的src
+        videoElement.src = url;
+        // 自动播放视频（根据需要开启，注意某些浏览器可能需要用户交互才能自动播放）
+        videoElement.autoplay = true;
+        // 重置video的当前时间，确保从头开始播放
+        videoElement.currentTime = 0;
+
+        // 清空数据片段数组
+        chunks = [];
+        // 停止媒体流中各个轨道的播放
+        stream.getTracks().forEach(track => track.stop());
+        // 重置
+        mediaRecorder = null;
+      }
+
+      // 开始录制
+      mediaRecorder.start();
+    } catch (error) {
+      // 处理获取流出错的情况
+      console.error('获取屏幕共享出错:', error);
+    }
+  };
+
+  // 停止录屏的函数
+  const stopRecording = () => {
+    // 停止录制器
+    mediaRecorder.stop();
+  };
+
+  // 为开始录屏按钮添加点击事件监听
+  document.getElementById('startRecording').addEventListener('click', startRecording);
+  // 为停止录屏按钮添加点击事件监听
+  document.getElementById('stopRecording').addEventListener('click', stopRecording);
+</script>
+</body>
+
+</html>
