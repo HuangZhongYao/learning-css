@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>steam</title>
+  <style>
+
+    /*清除默认样式*/
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    .notice {
+      width: 46px;
+      height: 24px;
+      line-height: 24px;
+      text-align: center;
+      background-color: #5c7e10;
+      color: white;
+      margin: 30px auto auto;
+    }
+
+    .notice .notice-icon {
+      width: 14px;
+    }
+
+    .notice a {
+      color: white;
+    }
+
+    .notice-ld:hover {
+      /*原点位于元素的水平中心（center）和垂直顶部（top）位置*/
+      transform-origin: center top;
+      /* 0.3 秒内 匀速完成 2 次动画 */
+      animation: left-Right-shaking 0.3s linear 2;
+
+    }
+
+    /*左右摇摆关键帧动画*/
+    @keyframes left-Right-shaking {
+      0% {
+        transform: rotate(0deg);
+      }
+      1% {
+        transform: rotate(1deg);
+      }
+      2% {
+        transform: rotate(2deg);
+      }
+      3% {
+        transform: rotate(3deg);
+      }
+      4% {
+        transform: rotate(4deg);
+      }
+      5% {
+        transform: rotate(5deg);
+      }
+      6% {
+        transform: rotate(6deg);
+      }
+      7% {
+        transform: rotate(7deg);
+      }
+      8% {
+        transform: rotate(8deg);
+      }
+      9% {
+        transform: rotate(9deg);
+      }
+      10% {
+        transform: rotate(10deg);
+      }
+      11% {
+        transform: rotate(11deg);
+      }
+      12% {
+        transform: rotate(12deg);
+      }
+      13% {
+        transform: rotate(13deg);
+      }
+      14% {
+        transform: rotate(14deg);
+      }
+      15% {
+        transform: rotate(15deg);
+      }
+      16% {
+        transform: rotate(16deg);
+      }
+      17% {
+        transform: rotate(17deg);
+      }
+      18% {
+        transform: rotate(18deg);
+      }
+      19% {
+        transform: rotate(19deg);
+      }
+      20% {
+        transform: rotate(20deg);
+      }
+      21% {
+        transform: rotate(21deg);
+      }
+      22% {
+        transform: rotate(22deg);
+      }
+      23% {
+        transform: rotate(23deg);
+      }
+      24% {
+        transform: rotate(24deg);
+      }
+      25% {
+        transform: rotate(25deg);
+      }
+      26% {
+        transform: rotate(24deg);
+      }
+      27% {
+        transform: rotate(23deg);
+      }
+      28% {
+        transform: rotate(22deg);
+      }
+      29% {
+        transform: rotate(21deg);
+      }
+      30% {
+        transform: rotate(20deg);
+      }
+      31% {
+        transform: rotate(19deg);
+      }
+      32% {
+        transform: rotate(18deg);
+      }
+      33% {
+        transform: rotate(17deg);
+      }
+      34% {
+        transform: rotate(16deg);
+      }
+      35% {
+        transform: rotate(15deg);
+      }
+      36% {
+        transform: rotate(14deg);
+      }
+      37% {
+        transform: rotate(13deg);
+      }
+      38% {
+        transform: rotate(12deg);
+      }
+      39% {
+        transform: rotate(11deg);
+      }
+      40% {
+        transform: rotate(10deg);
+      }
+      41% {
+        transform: rotate(9deg);
+      }
+      42% {
+        transform: rotate(8deg);
+      }
+      43% {
+        transform: rotate(7deg);
+      }
+      44% {
+        transform: rotate(6deg);
+      }
+      45% {
+        transform: rotate(5deg);
+      }
+      46% {
+        transform: rotate(4deg);
+      }
+      47% {
+        transform: rotate(3deg);
+      }
+      48% {
+        transform: rotate(2deg);
+      }
+      49% {
+        transform: rotate(1deg);
+      }
+      50% {
+        transform: rotate(0deg);
+      }
+      51% {
+        transform: rotate(-1deg);
+      }
+      52% {
+        transform: rotate(-2deg);
+      }
+      53% {
+        transform: rotate(-3deg);
+      }
+      54% {
+        transform: rotate(-4deg);
+      }
+      55% {
+        transform: rotate(-5deg);
+      }
+      56% {
+        transform: rotate(-6deg);
+      }
+      57% {
+        transform: rotate(-7deg);
+      }
+      58% {
+        transform: rotate(-8deg);
+      }
+      59% {
+        transform: rotate(-9deg);
+      }
+      60% {
+        transform: rotate(-10deg);
+      }
+      61% {
+        transform: rotate(-11deg);
+      }
+      62% {
+        transform: rotate(-12deg);
+      }
+      63% {
+        transform: rotate(-13deg);
+      }
+      64% {
+        transform: rotate(-14deg);
+      }
+      65% {
+        transform: rotate(-15deg);
+      }
+      66% {
+        transform: rotate(-16deg);
+      }
+      67% {
+        transform: rotate(-17deg);
+      }
+      68% {
+        transform: rotate(-18deg);
+      }
+      69% {
+        transform: rotate(-19deg);
+      }
+      70% {
+        transform: rotate(-20deg);
+      }
+      71% {
+        transform: rotate(-21deg);
+      }
+      72% {
+        transform: rotate(-22deg);
+      }
+      73% {
+        transform: rotate(-23deg);
+      }
+      74% {
+        transform: rotate(-24deg);
+      }
+      75% {
+        transform: rotate(-25deg);
+      }
+      76% {
+        transform: rotate(-24deg);
+      }
+      77% {
+        transform: rotate(-23deg);
+      }
+      78% {
+        transform: rotate(-22deg);
+      }
+      79% {
+        transform: rotate(-21deg);
+      }
+      80% {
+        transform: rotate(-20deg);
+      }
+      81% {
+        transform: rotate(-19deg);
+      }
+      82% {
+        transform: rotate(-18deg);
+      }
+      83% {
+        transform: rotate(-17deg);
+      }
+      84% {
+        transform: rotate(-16deg);
+      }
+      85% {
+        transform: rotate(-15deg);
+      }
+      86% {
+        transform: rotate(-14deg);
+      }
+      87% {
+        transform: rotate(-13deg);
+      }
+      88% {
+        transform: rotate(-12deg);
+      }
+      89% {
+        transform: rotate(-11deg);
+      }
+      90% {
+        transform: rotate(-10deg);
+      }
+      91% {
+        transform: rotate(-9deg);
+      }
+      92% {
+        transform: rotate(-8deg);
+      }
+      93% {
+        transform: rotate(-7deg);
+      }
+      94% {
+        transform: rotate(-6deg);
+      }
+      95% {
+        transform: rotate(-5deg);
+      }
+      96% {
+        transform: rotate(-4deg);
+      }
+      97% {
+        transform: rotate(-3deg);
+      }
+      98% {
+        transform: rotate(-2deg);
+      }
+      99% {
+        transform: rotate(-1deg);
+      }
+      100% {
+        transform: rotate(0deg);
+      }
+    }
+  </style>
+</head>
+<body>
+<div class="page-content">
+  <div class="global_header">
+    <!--通知图标-->
+    <div class="notice item">
+      <a href="#">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 36 36" fill="none" class="notice-icon notice-ld">
+          <g class="SVGIcon_Notification">
+            <path fill-rule="evenodd" clip-rule="evenodd"
+                  d="M32 24V26H4V24L8 19V12C8 9.34784 9.05357 6.8043 10.9289 4.92893C12.8043 3.05357 15.3478 2 18 2C20.6522 2 23.1957 3.05357 25.0711 4.92893C26.9464 6.8043 28 9.34784 28 12V19L32 24Z"
+                  fill="currentColor"></path>
+            <path class="SVGIcon_Notification_Uvula" fill-rule="evenodd" clip-rule="evenodd"
+                  d="M18 34C19.2396 33.9986 20.4483 33.6133 21.46 32.897C22.4718 32.1807 23.2368 31.1687 23.65 30H12.35C12.7632 31.1687 13.5282 32.1807 14.54 32.897C15.5517 33.6133 16.7604 33.9986 18 34Z"
+                  fill="currentColor"></path>
+          </g>
+        </svg>
+      </a>
+    </div>
+  </div>
+</div>
+
+
+</body>
+</html>
