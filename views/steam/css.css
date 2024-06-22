@@ -351,6 +351,7 @@ body{
   color: white;
   font-size: 11px;
   text-align: center;
+  cursor: pointer;
 }
 
 .menu-line-1 div:first-child{
