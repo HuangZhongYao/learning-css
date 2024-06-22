@@ -66,6 +66,7 @@ body{
   font-family: "Motiva Sans", "Twemoji", "Noto Sans", Helvetica, sans-serif;
   font-weight: bold;
 
+
 }
 
 .nav-menu>a:hover{
@@ -311,3 +312,125 @@ body{
   100% {transform: rotate(0deg);}
 }
 
+.menu-area{
+  height: 450px;
+  background-color: black;
+  text-align: center;
+  position: relative;
+
+}
+
+.menu-area .menu{
+  position: absolute;
+  top: 0;
+  left: 25%;
+  z-index: 3;
+  width: 940px;
+  height: 66px;
+}
+
+.menu-line-1{
+  text-align: end;
+  margin-top: 8px;
+  color: white;
+  height: 20px;
+}
+
+.menu-line-1 .menu-line-1-icon {
+  width: 15px;
+  vertical-align: sub;
+}
+
+.menu-line-1 div{
+  box-sizing: border-box;
+  height: 20px;
+  line-height: 20px;
+  border-radius: 0;
+  box-shadow: 0 0 3px #000;
+  border: transparent;
+  color: white;
+  font-size: 11px;
+  text-align: center;
+}
+
+.menu-line-1 div:first-child{
+  background-color: #7EA64B;
+  float: right;
+  width: 121.19px;
+  padding: 0 20px;
+}
+
+.menu-line-1 div:last-child{
+  background-color: #7CA4AE;
+  border-radius: 1px;
+  float: right;
+  width: 107.66px;
+  margin: 0 1px;
+}
+
+
+
+.menu-line-2{
+  height: 35px;
+  line-height: 35px;
+  width: 100%;
+  margin-top: 4px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: linear-gradient(90deg, rgba(62, 103, 150, 0.919) 11.38%, rgba(58, 120, 177, 0.8) 25.23%, rgb(15, 33, 110) 100%);
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.4);
+}
+
+.foryou_avatar{
+  width: 16px;
+  height: 16px;
+}
+
+.menu-line-2 .menu-line-2-left{
+  display: flex;
+  font-size: 13px;
+  font-family: Arial, Helvetica, sans-serif;
+  align-items: center;
+}
+
+.menu-line-2-left-item{
+  padding: 0 10px 0 15px;
+  color: white;
+}
+
+.menu-line-2-left-item-first{
+  padding: 0 10px 0 10px;
+  color: white;
+}
+
+.menu-line-2-left-item-img{
+  margin-left: 10px;
+}
+
+.menu-line-2 .menu-line-2-right{
+  display: flex;
+  height: 27px;
+  background-color: #316282;
+  border-radius: 3px;
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  box-shadow: 1px 1px 0px rgba(255, 255, 255, 0.2);
+  color: #fff;
+  padding: 0 6px;
+  cursor: text;
+}
+
+.menu-line-2-right input{
+  color: white;
+  font-size: 14px;
+  margin-top: 1px;
+  font-family: "Motiva Sans", Sans-serif;
+  font-weight: 300;
+  background-color: transparent;
+  border: none;
+  font-style: italic;
+}
+
+.menu-line-2-right input:focus{
+  font-style: normal;
+}
