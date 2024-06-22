@@ -1,37 +1,29 @@
-# Learning-CSS 
+# Learning-CSS
 
 #### 介绍
-复习CSS
 
-#### 软件架构
-软件架构说明
-
+复习CSS，实现一些小效果
 
 #### 安装教程
 
-1.  xxxx
-2.  xxxx
-3.  xxxx
+1.  npm install
+2.  npm run start
 
-#### 使用说明
+#### css 编写一些效果复习前端css
 
-1.  xxxx
-2.  xxxx
-3.  xxxx
-
-#### 参与贡献
-
-1.  Fork 本仓库
-2.  新建 Feat_xxx 分支
-3.  提交代码
-4.  新建 Pull Request
-
-
-#### 特技
-
-1.  使用 Readme\_XXX.md 来支持不同的语言，例如 Readme\_en.md, Readme\_zh.md
-2.  Gitee 官方博客 [blog.gitee.com](https://blog.gitee.com)
-3.  你可以 [https://gitee.com/explore](https://gitee.com/explore) 这个地址来了解 Gitee 上的优秀开源项目
-4.  [GVP](https://gitee.com/gvp) 全称是 Gitee 最有价值开源项目，是综合评定出的优秀开源项目
-5.  Gitee 官方提供的使用手册 [https://gitee.com/help](https://gitee.com/help)
-6.  Gitee 封面人物是一档用来展示 Gitee 会员风采的栏目 [https://gitee.com/gitee-stars/](https://gitee.com/gitee-stars/)
+1.  顶部导航
+![img.png](img/demo/img.png)
+2.  侧边栏菜单
+![img.png](img/demo/img11.png)
+3.  侧边栏菜单二级菜单
+![img_1.png](img/demo/img_1.png)
+4.  多列布局
+![img_2.png](img/demo/img_2.png)
+5. Flex布局
+![img_3.png](img/demo/img_3.png)
+6. 仿Steam铃铛晃动效果
+![img_4.png](img/demo/img_4.png)
+7. web实现录屏
+![img_5.png](img/demo/img_5.png)
+8. 模仿Steam首页
+![img_6.png](img/demo/img_6.png)
