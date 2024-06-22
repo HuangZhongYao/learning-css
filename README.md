@@ -22,8 +22,8 @@
 5. Flex布局
 ![img_3.png](./img/demo/img_3.png)
 6. 仿Steam铃铛晃动效果
-![img_4.png](img/demo/img_4.png)
+![img_4.png](./img/demo/img_4.png)
 7. web实现录屏
-![img_5.png](img/demo/img_5.png)
+![img_5.png](./img/demo/img_5.png)
 8. 模仿Steam首页
-![img_6.png](img/demo/img_6.png)
+![img_6.png](./img/demo/img_6.png)
