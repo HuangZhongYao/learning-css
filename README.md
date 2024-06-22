@@ -12,15 +12,15 @@
 #### css 编写一些效果复习前端css
 
 1.  顶部导航
-![img.png](img/demo/img.png)
+![img.png](./img/demo/img.png)
 2.  侧边栏菜单
-![img.png](img/demo/img11.png)
+![img.png](./img/demo/img11.png)
 3.  侧边栏菜单二级菜单
-![img_1.png](img/demo/img_1.png)
+![img_1.png](./img/demo/img_1.png)
 4.  多列布局
-![img_2.png](img/demo/img_2.png)
+![img_2.png](./img/demo/img_2.png)
 5. Flex布局
-![img_3.png](img/demo/img_3.png)
+![img_3.png](./img/demo/img_3.png)
 6. 仿Steam铃铛晃动效果
 ![img_4.png](img/demo/img_4.png)
 7. web实现录屏
