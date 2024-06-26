@@ -397,16 +397,69 @@ body{
 
 .menu-line-2-left-item{
   padding: 0 10px 0 15px;
-  color: white;
+  color: #E5E5E5;
 }
 
 .menu-line-2-left-item-first{
   padding: 0 10px 0 10px;
-  color: white;
+  color: #E5E5E5;
 }
 
 .menu-line-2-left-item-img{
   margin-left: 10px;
+}
+
+.sub-menu{
+  position: absolute;
+  left: 0;
+  top: auto;
+  display: none;
+  background: linear-gradient(90deg, rgba(33, 162, 255, 0.1) 1.89%, rgba(50, 50, 51, 0) 50%), linear-gradient(180deg, #575860 11.6%, #3A4852 54.73%, #2C2D34 100%);
+  padding: 8px 5px 8px 5px;
+  font-family: Motiva Sans, Arial, Helvectica, Verdana, sans-serif;
+  font-size: 12px;
+}
+
+.sub-menu-item-lable{
+
+  text-align: start;
+  color: #2EBFFF;
+  font-size: 11px;
+  padding: 3px 1px 2px 1px;
+  margin: 0px 10px 3px 13px;
+  margin-top: 16px;
+  text-shadow: 0 2px 3px rgba(0,0,0,0.3);
+}
+
+.sub-menu-item{
+  color: #E5E5E5;
+  text-align: start;
+  padding: 3px 1px 2px 1px;
+  margin: 0px 10px 3px 13px;
+  height: 24px;
+  line-height: normal;
+  box-sizing: border-box;
+
+}
+
+/*悬停菜单时*/
+.menu-line-2-left > span:hover{
+  color: white;
+  background: linear-gradient(90deg,
+  rgba(33,162,255,0.25)0%,
+  rgba(33,162,255,0.15)50%,
+  rgba(50,50,51,0)100%);
+  text-shadow: 0 2px 3px rgba(0,0,0,0.3);
+  cursor: pointer;
+}
+/*显示子菜单*/
+.menu-line-2-left > span:hover .sub-menu{
+  display: block;
+}
+
+.menu-line-2-left  .sub-menu .sub-menu-item:hover{
+  color: white;
+  border-bottom: 2px solid white ;
 }
 
 .menu-line-2 .menu-line-2-right{
@@ -435,3 +488,5 @@ body{
 .menu-line-2-right input:focus{
   font-style: normal;
 }
+
+

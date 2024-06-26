@@ -80,8 +80,6 @@
   <!-- 中部菜单区 -->
   <div class="menu-area">
     <video id="videoBackground" class="background" muted loop autoplay playsinline>
-<!--      <source  src="/video/mp4_page_bg_schinese.mp4" type="video/mp4">-->
-<!--      <source  src="/video/mp4_page_bg_schinese2.mp4" type="video/mp4">-->
     </video>
     <div class="menu">
       <div class="menu-line-1">
@@ -96,12 +94,35 @@
       <div class="menu-line-2">
         <div class="menu-line-2-left">
           <img class="foryou_avatar menu-line-2-left-item-img" src="/img/avatar.png" alt="">
-          <a href="#" class="menu-line-2-left-item-first">您的商店</a>
-          <a href="#" class="menu-line-2-left-item">新鲜推荐</a>
-          <a href="#" class="menu-line-2-left-item">类别</a>
-          <a href="#" class="menu-line-2-left-item">点数商店</a>
-          <a href="#" class="menu-line-2-left-item">新闻</a>
-          <a href="#" class="menu-line-2-left-item">实验室</a>
+          <span  class="menu-line-2-left-item-first">
+            您的商店
+            <div class="sub-menu">
+              <dl>
+                <dd class="sub-menu-item">主页</dd>
+                <dd class="sub-menu-item">关注的软件和游戏</dd>
+                <dd class="sub-menu-item">偏好</dd>
+                <dt class="sub-menu-item-lable">推荐</dt>
+                <dd class="sub-menu-item">探索队列</dd>
+                <dd class="sub-menu-item">新品队列</dd>
+                <dd class="sub-menu-item">社区推荐</dd>
+                <dd class="sub-menu-item">交互式推荐模型</dd>
+                <dd class="sub-menu-item">好友中热门</dd>
+                <dd class="sub-menu-item">Steam 鉴赏家</dd>
+                <dd class="sub-menu-item">为您推荐的 DLC</dd>
+                <dt class="sub-menu-item-lable">因为您喜爱</dt>
+                <dd class="sub-menu-item">大逃杀</dd>
+                <dd class="sub-menu-item">电竞</dd>
+                <dd class="sub-menu-item">团队导向</dd>
+                <dd class="sub-menu-item">竞技</dd>
+                <dd class="sub-menu-item">为您推荐更多标签...</dd>
+              </dl>
+            </div>
+          </span>
+          <span class="menu-line-2-left-item">类别</span>
+          <span class="menu-line-2-left-item">新鲜推荐</span>
+          <span class="menu-line-2-left-item">点数商店</span>
+          <span class="menu-line-2-left-item">新闻</span>
+          <span class="menu-line-2-left-item">实验室</span>
         </div>
         <div class="menu-line-2-right">
           <input type="text" placeholder="搜索"/>
@@ -116,6 +137,7 @@
 
 <script>
   window.addEventListener('load', function() {
+    // 设置视频背景随机播放
     var video = document.getElementById("videoBackground");
     var videoSrc = ["/video/mp4_page_bg_schinese.mp4", "/video/mp4_page_bg_schinese2.mp4"]; // 视频文件路径数组
     var randomIndex = Math.floor(Math.random() * videoSrc.length);
