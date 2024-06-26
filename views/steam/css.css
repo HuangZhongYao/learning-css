@@ -439,6 +439,7 @@ body{
   height: 24px;
   line-height: normal;
   box-sizing: border-box;
+  width: fit-content;
 
 }
 
